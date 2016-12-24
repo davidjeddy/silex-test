@@ -3,9 +3,9 @@
     "description": "A test project to try out the silex 2 micro framework.",
     "type": "project",
     "require": {
-        "silex/silex": "2",
-        "codeception/codeception": "^2.2",
-        "moriony/silex-sentry-provider": "^2.0"
+        "silex/silex": "^2",
+        "codeception/codeception": "^2",
+        "moriony/silex-sentry-provider": "^2"
     },
     "license": "MIT",
     "authors": [
