@@ -1,2 +1,20 @@
-php
-data
+# application code
+app:
+  image: busybox:latest
+  volumes:
+    - ./app:/var/www/html
+  volumes_from:
+    - vendor
+  entrypoint: tail -f /dev/null
+
+# web server
+#server:
+#  build: docker/server
+#  working_dir: /var/www/html
+#  volumes_from:
+#    - app
+
+## vendor packages
+vendor:
+  build: docker/vendor
+  working_dir: /var/www/html/vendor
