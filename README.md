@@ -1,11 +1,18 @@
-Silex Test
+# Silex Test
 ===
-A test application leveraging the Silex micro framework, codecetion functional testing, docker ENV control, and AWS deployment process.
+A test application leveraging the Silex micro framework, codeception functional automated testing,
+docker containerization, and the AWS container deployment process.
 
-Contrib
+# Contrib
 ===
 David J Eddy <me@davidjeddy.com>
 
-Lic
+# Lic
 ===
 https://opensource.org/licenses/MIT
+
+# Usage
+===
+    docker build -t silex-test . # this can take some time, be patient
+    docker run -d -p 8080:80 silex-test # host port: container port
+    http://localhost:8080/ # HTTP request address 

@@ -1,7 +1,0 @@
-FROM php:7-fpm
-COPY ./web /app
-WORKDIR /app
-#RUN chmod +x ./start-php-server.sh
-#ENTRYPOINT ["./start-php-server.sh"]
-#ENTRYPOINT ["/bin/bash"]
-CMD php -S 0.0.0.0:80 -t ./  > /dev/null 2>&1 &
