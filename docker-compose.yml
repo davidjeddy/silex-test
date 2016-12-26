@@ -1,12 +1,9 @@
-# application code
-app:
-  entrypoint: tail -f /dev/null
-  env_file: ./app/.env
-  image: busybox:latest
+# program code
+code:
+  build: docker/code
+  env_file: .env
   volumes:
-    - ./app:/var/www/html
-  volumn_from:
-    - vendor
+    - ./code:/code
 
 # web server
 server:
@@ -14,9 +11,4 @@ server:
   ports:
     - "8080:80"
   volumes_from:
-    - app
-  working_dir: /var/www/html
-
-## vendor packages
-vendor:
-  build: docker/vendor
+    - code

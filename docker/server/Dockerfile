@@ -1,6 +1,7 @@
 FROM php:7
 
-WORKDIR /var/www/html
+WORKDIR /code
 
 # run PHP web server
+EXPOSE 80
 CMD ["php", "-S", "0.0.0.0:80"]

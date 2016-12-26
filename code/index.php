@@ -1,7 +1,4 @@
 <?php
-echo 'asdf';
-exit;
-
 # silex micro framework basic entry script
 
 // web/index.php
