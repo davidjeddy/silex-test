@@ -4,6 +4,7 @@ code:
   env_file: .env
   volumes:
     - ./code:/code
+    - ./.env:/code/.env
 
 # web server
 server:
@@ -12,3 +13,31 @@ server:
     - "8080:80"
   volumes_from:
     - code
+
+# database
+db:
+  env_file: .env
+  image: mariadb:10.1
+  volumes:
+    - /var/lib/mysql
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: app_db
+    MYSQL_USER: app_db_user
+    MYSQL_PASSWORD: app_db_pass
+
+# database for functional testing
+#db_test:
+#  env_file: .env
+#  image: mariadb:10.1
+#  volumes:
+#    - /var/lib/mysql
+#  ports:
+#    - "3307:3306"
+#  environment:
+#    MYSQL_ROOT_PASSWORD: root
+#    MYSQL_DATABASE: app_db_test
+#    MYSQL_USER: app_db_user_test
+#    MYSQL_PASSWORD: app_db_pass_test
