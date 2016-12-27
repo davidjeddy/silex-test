@@ -5,6 +5,9 @@ code:
   volumes:
     - ./code:/code
     - ./.env:/code/.env
+  links:
+    - db
+#    - db_test
 
 # web server
 server:
