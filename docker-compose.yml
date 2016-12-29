@@ -1,13 +1,8 @@
 # program code
 code:
   build: docker/code
-  env_file: .env
   volumes:
     - ./code:/code
-    - ./.env:/code/.env
-  links:
-    - db
-#    - db_test
 
 # web server
 server:
@@ -19,8 +14,7 @@ server:
 
 # database
 db:
-  env_file: .env
-  image: mariadb:10.1
+  image: mysql:latest
   volumes:
     - /var/lib/mysql
   ports:
@@ -30,17 +24,3 @@ db:
     MYSQL_DATABASE: app_db
     MYSQL_USER: app_db_user
     MYSQL_PASSWORD: app_db_pass
-
-# database for functional testing
-#db_test:
-#  env_file: .env
-#  image: mariadb:10.1
-#  volumes:
-#    - /var/lib/mysql
-#  ports:
-#    - "3307:3306"
-#  environment:
-#    MYSQL_ROOT_PASSWORD: root
-#    MYSQL_DATABASE: app_db_test
-#    MYSQL_USER: app_db_user_test
-#    MYSQL_PASSWORD: app_db_pass_test
