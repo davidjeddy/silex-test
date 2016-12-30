@@ -6,7 +6,8 @@
         "silex/silex": "^2",
         "doctrine/dbal": "^2",
         "lastzero/doctrine-active-record": "^1.2",
-        "vlucas/phpdotenv": "^2"
+        "vlucas/phpdotenv": "^2",
+        "symfony/serializer": "^3"
     },
     "require-dev": {
           "codeception/codeception": "^2"

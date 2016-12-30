@@ -1,14 +1,12 @@
 <?php
-$filename = __DIR__.preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
-if (php_sapi_name() === 'cli-server' && is_file($filename)) {
-    return false;
-}
-
 # silex micro framework basic entry script
 
 // web/index.php
 require_once __DIR__.'/vendor/autoload.php';
 require_once __DIR__.'/common/env.php';
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -25,21 +23,26 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
     ]
 ]);
 
-# TODO find out why 'test' does not work as a route - DJE
-$app->get('/testing/{id}', function ($id) use ($app) {
-    $sql = 'SELECT * FROM test WHERE id = ?';
-    $data = $app['db']->fetchAssoc($sql, [$app->escape($id)]);
-    return $app->json($data);
-});
+$app->register(new Silex\Provider\SerializerServiceProvider());
 
-$app->get('/hello/{name}', function ($name) use ($app) {
-    return 'Hello '.$app->escape($name);
-});
+// only accept content types supported by the serializer via the assert method.
+$app->get("/{id}.{_format}", function (Request $request, $id) use ($app) {
 
-$app->get('/', function () use ($app) {
-    $sql = 'SELECT * FROM test WHERE id = 1';
-    $data = $app['db']->fetchAssoc($sql);
-    return $app->json($data);
-});
+    $data = $app['db']->fetchAssoc(
+        'SELECT * FROM test WHERE id = ?',
+        [
+            $app->escape($id)
+        ]
+    );
+
+    //$format = $request->getRequestFormat();
+    $format = $request->getRequestFormat();
+
+    return new Response($app['serializer']->serialize($data, $format), 200, array(
+        "Content-Type" => $request->getMimeType($format)
+    ));
+})->assert("_format", "xml|json")
+    ->assert("id", "\d+");
+
 
 $app->run();
