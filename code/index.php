@@ -26,23 +26,18 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
 $app->register(new Silex\Provider\SerializerServiceProvider());
 
 // only accept content types supported by the serializer via the assert method.
-$app->get("/{id}.{_format}", function (Request $request, $id) use ($app) {
+$app->get("/", function (Request $request) use ($app) {
 
-    $data = $app['db']->fetchAssoc(
-        'SELECT * FROM test WHERE id = ?',
-        [
-            $app->escape($id)
-        ]
+    $data = $app['db']->fetchAll(
+        'SELECT * FROM test'
     );
 
     //$format = $request->getRequestFormat();
-    $format = $request->getRequestFormat();
+    $format = 'json';//$request->getRequestFormat();
 
     return new Response($app['serializer']->serialize($data, $format), 200, array(
         "Content-Type" => $request->getMimeType($format)
     ));
-})->assert("_format", "xml|json")
-    ->assert("id", "\d+");
-
+});
 
 $app->run();
