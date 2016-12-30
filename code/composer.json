@@ -18,5 +18,10 @@
             "email": "me@davidjeddy.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "SilexTest\\": ""
+        }
+    }
 }
