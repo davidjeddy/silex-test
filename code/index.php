@@ -30,6 +30,20 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
     ]
 ]);
 
+$app['controllers']
+    //->value('id', '1')
+    ->assert('id', '\d+')
+    //->requireHttps()
+    ->method('get')
+    ->convert('id', function () use ($id) { return (int)$id; })
+    //->before(function () { /* ... */ })
+    //->when('request.isSecure() == true')
+;
+
+$app->get('/cntlConf', function() use ($app) {
+    return $app->json(['message' => 'CNTL conf example.']);
+});
+
 $app->get('/assert/{id}', function ($id) use ($app) {
     $sql = 'SELECT * FROM test WHERE id = ?';
     $data = $app['db']->fetchAssoc($sql, [$app->escape($id)]);
