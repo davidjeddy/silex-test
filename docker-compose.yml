@@ -1,6 +1,7 @@
 # program code
 code:
   build: docker/code
+  env_file: ./code/.env
   volumes:
     - ./code:/code
 

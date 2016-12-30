@@ -13,16 +13,15 @@ require_once __DIR__.'/common/env.php';
 $app = new Silex\Application();
 $app['debug'] = true;
 
-
 $app->register(new Silex\Provider\DoctrineServiceProvider(), [
     'db.options' => [
-        'driver' => 'pdo_mysql',
-        'dbname' => 'app_db',
-        'host' => '172.17.0.2',
-        'user' => 'app_db_user',
-        'password' => 'app_db_pass',
-        'charset' => 'utf8mb4',
-        'port' => '3306',
+        'driver' => getenv('DB_DRIV'),
+        'dbname' => getenv('DB_NAME'),
+        'host' => getenv('DB_HOST'),
+        'user' => getenv('DB_USER'),
+        'password' => getenv('DB_PASS'),
+        'charset' => getenv('DB_CHAR'),
+        'port' => getenv('DB_PORT'),
     ]
 ]);
 
