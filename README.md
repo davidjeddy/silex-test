@@ -14,7 +14,9 @@ https://opensource.org/licenses/MIT
 Requirements
 ===
 Basic linux terminal skills
+
 [Terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
+
 [Docker](https://www.docker.com/)
 
 Installation
