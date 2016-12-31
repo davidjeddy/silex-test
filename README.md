@@ -40,3 +40,15 @@ Usage
 Once the container system is built the application will be accessible via HTTP requests at
 
     http://localhost:8080/
+
+Testing
+===
+Bring the environment up via 
+
+    ocker-compose up --build
+
+Run Codeception testing using the command
+
+    docker-compose run code codecept run -c ./tests
+
+Observe output
