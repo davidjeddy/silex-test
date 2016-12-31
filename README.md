@@ -45,7 +45,7 @@ Testing
 ===
 Bring the environment up via 
 
-    ocker-compose up --build
+    docker-compose up --build
 
 Run Codeception testing using the command
 
