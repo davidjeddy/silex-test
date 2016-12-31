@@ -1,7 +1,7 @@
 Silex Test
 ===
 A test application leveraging the Silex micro framework, codeception functional automated testing,
-docker containerization, and the AWS container deployment process.
+and docker containerization.
 
 Contrib
 ===
@@ -13,16 +13,30 @@ https://opensource.org/licenses/MIT
 
 Requirements
 ===
-    AWS
-    Docker
-    Terminal
+    Basic linux terminal skills
+    [Terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
+    [Docker](https://www.docker.com/)
 
 Installation
 ===
-    docker-compose build
-    docker-compose up
-    docker-compose run code composer install --profile -o -vvv
+First copy .env.dist as .env and edit values as needed (defaults are provided).
+
+    cp .env.dist .env && vim .env
+
+Next setup the container environment
+
+    docker-compose up --build
+
+Once the env is setup open a new terminal window and install dependencies
+
+    docker-compose run vendor composer install --profile -o -vvv
     
+Finally, double check the IP of the DB container. if not default update in .env
+
+    docker inspect silextest_db_1 | grep IPAddress
+
 Usage
 ===
-    http://localhost:8080/ # HTTP request address
+Once the container system is built the application will be accessible via HTTP requests at
+
+    http://localhost:8080/

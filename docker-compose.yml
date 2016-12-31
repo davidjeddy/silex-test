@@ -15,7 +15,7 @@ server:
 
 # database
 db:
-  image: mysql:latest
+  build: docker/db
   volumes:
     - /var/lib/mysql
   ports:
@@ -25,3 +25,9 @@ db:
     MYSQL_DATABASE: app_db
     MYSQL_USER: app_db_user
     MYSQL_PASSWORD: app_db_pass
+
+# program code
+vendor:
+  build: docker/vendor
+  volumes:
+    - ./code:/code
