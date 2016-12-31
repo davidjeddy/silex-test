@@ -5,29 +5,29 @@ code:
   volumes:
     - ./code:/code
 
-# web server
-server:
-  build: docker/server
-  ports:
-    - "8080:80"
-  volumes_from:
-    - code
-
-# database
-db:
-  build: docker/db
-  volumes:
-    - /var/lib/mysql
-  ports:
-    - "3306:3306"
-  environment:
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: app_db
-    MYSQL_USER: app_db_user
-    MYSQL_PASSWORD: app_db_pass
-
-# program code
-vendor:
-  build: docker/vendor
-  volumes:
-    - ./code:/code
+## web server
+#server:
+#  build: docker/server
+#  ports:
+#    - "8080:80"
+#  volumes_from:
+#    - code
+#
+## database
+#db:
+#  build: docker/db
+#  volumes:
+#    - /var/lib/mysql
+#  ports:
+#    - "3306:3306"
+#  environment:
+#    MYSQL_ROOT_PASSWORD: root
+#    MYSQL_DATABASE: app_db
+#    MYSQL_USER: app_db_user
+#    MYSQL_PASSWORD: app_db_pass
+#
+## program code
+#vendor:
+#  build: docker/vendor
+#  volumes:
+#    - ./code:/code

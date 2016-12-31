@@ -1,7 +1,5 @@
 FROM php:latest
 
-RUN docker-php-ext-install pdo pdo_mysql
-
 WORKDIR /code
 
 # req. when using php built in server
