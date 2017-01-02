@@ -13,4 +13,4 @@ modules:
     config:
         REST:
            depends: PhpBrowser
-           url: http://localhost:%HTTP_PORT_TEST%/index.php
+           url: http://localhost:8080/index.php

@@ -13,7 +13,6 @@ extensions:
     enabled:
         - Codeception\Extension\RunFailed
         - Codeception\Extension\PhpBuiltinServer
-modules:
     config:
         Db:
             dsn: mysql:host=%DB_HOST_TEST%;dbname=%DB_NAME_TEST%
@@ -23,7 +22,7 @@ modules:
             populate: true
             cleanup: true
             reconnect: true
-        PhpBuiltinServer:
+        Codeception\Extension\PhpBuiltinServer:
             hostname: localhost
             port: 8080
             documentRoot: /code

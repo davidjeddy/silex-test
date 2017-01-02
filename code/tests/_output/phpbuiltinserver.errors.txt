@@ -1,0 +1,23 @@
+[Mon Jan  2 14:58:54 2017] Failed to listen on localhost:8000 (reason: Address already in use)
+[Mon Jan  2 14:59:16 2017] Failed to listen on localhost:8000 (reason: Address already in use)
+[Mon Jan  2 14:59:18 2017] Failed to listen on localhost:8000 (reason: Address already in use)
+[Mon Jan  2 14:59:36 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 14:59:38 2017] ::1:54090 [500]: /index.php/
+[Mon Jan  2 14:59:38 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:00:47 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:00:49 2017] ::1:54094 [500]: /index.php/
+[Mon Jan  2 15:00:49 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:02:11 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:02:12 2017] ::1:54104 [200]: /index.php/ - Uncaught Error: Class 'Symfony\Component\Serializer\Serializer' not found in /code/vendor/silex/silex/src/Silex/Provider/SerializerServiceProvider.php:39
+Stack trace:
+#0 /code/vendor/pimple/pimple/src/Pimple/Container.php(113): Silex\Provider\SerializerServiceProvider->Silex\Provider\{closure}(Object(Silex\Application))
+#1 /code/index.php(38): Pimple\Container->offsetGet('serializer')
+#2 [internal function]: {closure}(Object(Symfony\Component\HttpFoundation\Request))
+#3 /code/vendor/symfony/http-kernel/HttpKernel.php(153): call_user_func_array(Object(Closure), Array)
+#4 /code/vendor/symfony/http-kernel/HttpKernel.php(68): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#5 /code/vendor/silex/silex/src/Silex/Application.php(496): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#6 /code/vendor/silex/silex/src/Silex/Application.php(477): Silex\Application->handle(Object(Symfony\Component\HttpFoundati in /code/vendor/silex/silex/src/Silex/Provider/SerializerServiceProvider.php on line 39
+[Mon Jan  2 15:02:12 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:06:31 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:06:33 2017] ::1:54336 [200]: /index.php/
+[Mon Jan  2 15:06:33 2017] Failed to listen on localhost:8080 (reason: Address already in use)

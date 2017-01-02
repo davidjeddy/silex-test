@@ -50,7 +50,7 @@ Bring the environment up via
 
     docker-compose up --build
 
-Run Codeception testing using the command
+Build and run Codeception testing suites in one step
    
     docker-compose run code codecept build -c ./tests && docker-compose run code codecept run -c ./tests
 
