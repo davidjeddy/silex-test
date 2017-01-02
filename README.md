@@ -50,9 +50,13 @@ Bring the environment up via
 
     docker-compose up --build
 
+Build the Codeception test suite (needed once per container build or if conguration is changed)
+
+    docker-compose run code codecept build -c ./tests
+
 Build and run Codeception testing suites in one step
    
-    docker-compose run code codecept build -c ./tests && docker-compose run code codecept run -c ./tests
+    docker-compose run code codecept run -c ./tests
 
 Observe output
 

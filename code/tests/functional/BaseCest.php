@@ -9,6 +9,8 @@ namespace tests\codeception\functional;
  */
 class BaseCest
 {
+    protected $response;
+
     /**
      * @param \AcceptanceTester $I
      */
@@ -18,6 +20,16 @@ class BaseCest
 
         $I->sendGET('/');
         $I->seeResponseCodeIs(200);
-        $I->seeResponseIsJson();
+        $this->response = \json_decode($I->grabResponse());
+    }
+
+    /**
+     * @param \AcceptanceTester $I
+     */
+    public function baseResourceDefaultCountGET(\FunctionalTester $I)
+    {
+        $I->wantTo(__METHOD__);
+        $I->assertEquals(6, count($this->response));
     }
 }
+

@@ -21,3 +21,27 @@ Stack trace:
 [Mon Jan  2 15:06:31 2017] Failed to listen on localhost:8080 (reason: Address already in use)
 [Mon Jan  2 15:06:33 2017] ::1:54336 [200]: /index.php/
 [Mon Jan  2 15:06:33 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:08:13 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:08:15 2017] ::1:54340 [200]: /index.php/
+[Mon Jan  2 15:08:15 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:08:49 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:08:51 2017] ::1:54344 [200]: /index.php/
+[Mon Jan  2 15:09:54 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:09:56 2017] ::1:54348 [200]: /index.php/
+[Mon Jan  2 15:10:16 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:10:18 2017] ::1:54352 [200]: /index.php/
+[Mon Jan  2 15:10:31 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:10:33 2017] ::1:54356 [200]: /index.php/
+[Mon Jan  2 15:10:33 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:12:06 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:12:07 2017] ::1:54360 [200]: /index.php/
+[Mon Jan  2 15:12:08 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:12:23 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:12:25 2017] ::1:54364 [200]: /index.php/
+[Mon Jan  2 15:12:25 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:12:38 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:12:40 2017] ::1:54368 [200]: /index.php/
+[Mon Jan  2 15:12:40 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:13:05 2017] Failed to listen on localhost:8080 (reason: Address already in use)
+[Mon Jan  2 15:13:07 2017] ::1:54372 [200]: /index.php/
+[Mon Jan  2 15:13:07 2017] Failed to listen on localhost:8080 (reason: Address already in use)
