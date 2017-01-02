@@ -21,9 +21,9 @@ Basic linux terminal skills
 
 Installation
 ===
-First copy .env.dist as .env and edit values as needed (defaults are provided).
+First copy .env.dist as .env and edit values as needed (defaults are provided)
 
-    cp .env.dist .env && vim .env
+    cp ./docker/code/.env.dist ./docker/code/.env
 
 Next setup the container environment
 
@@ -31,11 +31,12 @@ Next setup the container environment
 
 Once the env is setup open a new terminal window and install dependencies
 
-    docker-compose run vendor composer install --profile -o -vvv
+    docker-compose run vendor composer install --profile -o -vvv    
     
-Finally, double check the IP of the DB container. if not default update in .env
+Finally, check the IP of the DB container(s). Edit the .env to match
 
     docker inspect silextest_db_1 | grep IPAddress
+    docker inspect silextest_db_test_1 | grep IPAddress
 
 Usage
 ===
@@ -50,7 +51,11 @@ Bring the environment up via
     docker-compose up --build
 
 Run Codeception testing using the command
-
-    docker-compose run code codecept run -c ./tests
+   
+    docker-compose run code codecept build -c ./tests && docker-compose run code codecept run -c ./tests
 
 Observe output
+
+If you make changes to the codeception configuration rebuilding the generated classes is required
+
+    docker-compose run code codecept build -c ./tests

@@ -1,0 +1,23 @@
+{
+    "name": "david/silex-test",
+    "description": "A test project to try out the silex 2 micro framework.",
+    "type": "project",
+    "require": {
+        "silex/silex": "^2",
+        "doctrine/dbal": "^2",
+        "lastzero/doctrine-active-record": "^1.2",
+        "vlucas/phpdotenv": "^2"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2",
+        "codeception/phpbuiltinserver": "^1.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David J Eddy",
+            "email": "me@davidjeddy.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

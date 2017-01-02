@@ -4,7 +4,7 @@ paths:
     log: ./_output
     data: ./../../docker/db/
     support: ./_support
-    envs: ./_envs
+    envs: ./../.env
 settings:
     bootstrap: _bootstrap.php
     colors: true
@@ -12,10 +12,21 @@ settings:
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
+        - Codeception\Extension\PhpBuiltinServer
 modules:
     config:
         Db:
-            dsn: ''
-            user: ''
-            password: ''
-            dump: ./../../docker/db/dump.sql
+            dsn: mysql:host=%DB_HOST_TEST%;dbname=%DB_NAME_TEST%
+            user: %DB_USER_TEST%
+            password: %DB_PASS_TEST%
+            dump: ../../docker/db/dump.sql
+            populate: true
+            cleanup: true
+            reconnect: true
+        PhpBuiltinServer:
+            hostname: localhost
+            port: 8080
+            documentRoot: /code
+            autostart: true
+            startDelay: 1
+            phpIni: /usr/local/etc/php/php.ini
