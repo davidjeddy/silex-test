@@ -1,0 +1,31 @@
+actor: Tester
+paths:
+    tests: ./
+    log: ./_output
+    data: ./../../docker/db/
+    support: ./_support
+    envs: ./../.env
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+        - Codeception\Extension\PhpBuiltinServer
+    config:
+        Db:
+            dsn: mysql:host=%DB_HOST_TEST%;dbname=%DB_NAME_TEST%
+            user: %DB_USER_TEST%
+            password: %DB_PASS_TEST%
+            dump: ../../docker/db/dump.sql
+            populate: true
+            cleanup: true
+            reconnect: true
+        Codeception\Extension\PhpBuiltinServer:
+            hostname: localhost
+            port: 8080
+            documentRoot: /code
+            autostart: true
+            startDelay: 1
+            phpIni: /usr/local/etc/php/php.ini
