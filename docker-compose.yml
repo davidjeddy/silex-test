@@ -1,0 +1,14 @@
+# program code
+code:
+  build: docker/code
+  env_file: .env
+  volumes:
+    - ./code:/code
+
+# web server
+server:
+  build: docker/server
+  ports:
+    - "8080:80"
+  volumes_from:
+    - code

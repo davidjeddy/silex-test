@@ -1,0 +1,16 @@
+{
+    "name": "david/silex-test",
+    "description": "A test project to try out the silex 2 micro framework.",
+    "type": "project",
+    "require": {
+        "silex/silex": "~2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David J Eddy",
+            "email": "me@davidjeddy.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
